@@ -1,0 +1,34 @@
+Old Cluster
+- only deploying to the "old cluster"
+- main dependencies / work to do
+  - create stage namespace / deployment
+    - depends on app-interface/app-sre onboarding
+  - 3scale code changes
+    - PR is in review
+  - testing
+
+
+Multi-Cluster
+- only deploying to the "new multi-cluster"
+- main dependencies / work to do
+  - create stage namespace / deployment
+    - depends on app-interface/app-sre onboarding
+  - CAPS service 
+    - Q2 delivery likely
+  - testing
+
+
+Both Old Cluster and Multi-Cluster
+- main dependencies / work to do
+  - create 2 stage namespace / deployment (one for old cluster, one for new cluster)
+    - depends on app-interface/app-sre onboarding
+    - probably a bit more work because we'll need to create 2 namespaces
+  - split scheduler implementation
+    - this is work that will need to be done to make scheduler scalable.
+      however, i was hoping to get scheduler deployed to stage/prod, get some miles 
+      on it and integrated with the UI, then work on making it scalable
+  - 3scale code changes
+    - we can run the worker pods (job / task runner pods) in the old cluster
+      so they would need a way to verify that a user exists and get an identity token
+    - PR is in review
+  - testing
